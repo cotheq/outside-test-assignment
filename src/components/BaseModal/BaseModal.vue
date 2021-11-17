@@ -1,11 +1,13 @@
 <template>
   <div class="base-modal">
-    <div class="base-modal__content" v-click-outside="close">
+    <div class="base-modal__wrapper" v-click-outside="close">
       <div class="base-modal__close" @click="close">
         <!-- prettier-ignore -->
         <svg width="18" height="18" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill="currentColor" d="m11.423 9 6.054-6.055A1.712 1.712 0 1 0 15.055.523L9 6.577 2.945.523A1.713 1.713 0 1 0 .523 2.945l6.054 6.054-6.054 6.056a1.713 1.713 0 1 0 2.422 2.422l6.054-6.054 6.056 6.054A1.711 1.711 0 0 0 18 16.272a1.71 1.71 0 0 0-.523-1.217L11.423 9v.002Z"/></svg>
       </div>
-      <slot />
+      <div class="base-modal__content">
+        <slot />
+      </div>
     </div>
   </div>
 </template>
@@ -47,18 +49,22 @@ export default defineComponent({
   display: flex;
   align-items: center;
   justify-content: center;
-  &__content {
+  &__wrapper {
     padding: 32px;
     border-radius: 30px;
     background: white;
     position: relative;
     width: 100%;
     max-width: 453px;
-
     @media (max-width: 453px) {
       height: 100%;
       border-radius: 0;
     }
+  }
+  &__content {
+    height: 100%;
+    display: flex;
+    flex-flow: column;
   }
   &__close {
     content: "";

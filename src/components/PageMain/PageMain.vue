@@ -1,10 +1,7 @@
 <template>
   <div class="page-main">
     <base-button white @click="showModal">Налоговый вычет</base-button>
-    <tax-deduction-modal
-      v-if="isModalOpened"
-      @close="closeModal"
-    ></tax-deduction-modal>
+    <tax-deduction-modal v-if="isModalOpened" @close="closeModal" />
   </div>
 </template>
 <script>

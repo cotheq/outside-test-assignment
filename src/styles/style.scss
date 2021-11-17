@@ -31,16 +31,6 @@ body {
   min-height: 100vh;
 }
 
-.flex {
-  display: flex;
-  &.__column {
-    flex-flow: column;
-  }
-  &.__row {
-    flex-flow: row;
-  }
-}
-
 .__full-width {
   width: 100%;
 }
