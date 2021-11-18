@@ -56,8 +56,11 @@ export default defineComponent({
     position: relative;
     width: 100%;
     max-width: 453px;
+    max-height: 90%;
+    overflow: auto;
     @media (max-width: 453px) {
       height: 100%;
+      max-height: none;
       border-radius: 0;
     }
   }
