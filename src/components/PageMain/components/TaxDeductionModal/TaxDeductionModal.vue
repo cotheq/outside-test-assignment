@@ -9,15 +9,22 @@
     <base-button class="tax-deduction-modal__button __full-width">
       Добавить
     </base-button>
+    <currency-input v-model="salary" />
   </BaseModal>
 </template>
 <script lang="ts">
-import { defineComponent } from "vue";
+import { defineComponent, ref } from "vue";
 import BaseModal from "@/components/BaseModal";
 import BaseButton from "@/components/BaseButton";
+import CurrencyInput from "@/components/CurrencyInput";
 export default defineComponent({
   name: "TaxDeductionModal",
-  components: { BaseModal, BaseButton },
+  components: { CurrencyInput, BaseModal, BaseButton },
+  setup() {
+    const salary = ref<number | null>(null);
+    const ff = () => console.log(salary.value);
+    return { salary };
+  },
 });
 </script>
 <style lang="scss" scoped>
